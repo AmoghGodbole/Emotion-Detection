@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Upload images to server using Node JS</title>
+    <!-- <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script src="Scripts/jquery.form.min.js"></script> -->
+    <script src="node_modules/iink-js/dist/iink.min.js"></script>
+    <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+
+    <style>
+        #editor {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="editor" touch-action="none"></div>
+
+    <script>
+        const editorElement = document.getElementById('editor');
+        iink.register(editorElement, {
+        recognitionParams: {
+            type: 'TEXT',
+            server: {
+                applicationKey: 'c57449d8-0eb9-41ea-82e7-ceb466764c72',
+                hmacKey: 'b3ac1af1-5fae-41ac-b47d-ca738f1cf074'
+            }
+        }
+        });
+    </script>
+
+    
+</body>
+
+</html>
