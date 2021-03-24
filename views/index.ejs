@@ -1,0 +1,13 @@
+<%- include('partials/header') %>
+
+<% listOfTopics.map(l => { %>
+    <div>
+        <h2><%= l %></h2>
+        <a href="/upload">Write And Upload</a>
+        OR
+        <a href="/listen">Talk</a>        
+    </div>
+<% }) %>
+
+
+<%- include('partials/footer') %>

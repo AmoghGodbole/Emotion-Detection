@@ -1,26 +1,33 @@
 const express = require("express"),
   app = express(),
-  bodyParser = require("body-parser"),
   multer = require("multer"),
   fs = require("fs"),
   Sentiment = require("sentiment");
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 
+const listOfTopics = [
+  "Topic 1",
+  "Topic 2",
+  "Topic 3",
+  "Topic 4",
+  "Topic 5",
+  "Topic 6",
+  "Topic 7",
+  "Topic 8",
+];
+
 async function quickstart(file) {
   console.log("Inside quickstart " + file);
-  // Imports the Google Cloud client library
   const vision = require("@google-cloud/vision");
 
-  // Creates a client
   const client = new vision.ImageAnnotatorClient({
     keyFilename: "./apikey.json",
   });
 
-  // Performs label detection on the image file
-  // const [result] = await client.labelDetection("./build/images/check3.jpg");
   const [result] = await client.textDetection(file);
   const text = result.fullTextAnnotation.text;
   console.log(text);
@@ -29,17 +36,6 @@ async function quickstart(file) {
   console.log(res);
   return res;
 }
-
-// const Storage = multer.diskStorage({
-//   destination: (req, file, callback) => {
-//     callback(null, "./Images");
-//   },
-//   filename: (req, file, callback) => {
-//     callback(null, Date.now() + ".jpg");
-//   },
-// });
-
-// const upload = multer({ dest: "uploads/" });
 
 const Storage = multer.diskStorage({
   destination: (req, file, callback) => {
@@ -53,18 +49,30 @@ const Storage = multer.diskStorage({
 const upload = multer({
   storage: Storage,
 }).single("image");
-//route
-// app.get("/", (req, res) => {
-//   res.render("index");
-// });
 
 app.get("/", (req, res) => {
+  res.render("index", { listOfTopics });
+});
+
+app.get("/upload", (req, res) => {
   res.render("firstPage");
 });
 
-// app.get("/showData", (req, res) => {
-//   res.render("firstPage", { data });
-// });
+app.get("/conclusion/:data", (req, res) => {
+  const { data } = req.params;
+  const sentiment = new Sentiment();
+  const result = sentiment.analyze(data);
+  console.log(result);
+  res.render("conclusion", { data: result });
+});
+
+app.get("/listen", (req, res) => {
+  res.render("listen");
+});
+
+app.post("/listen/:data", (req, res) => {
+  return res.redirect(200, "/conclusion/:data");
+});
 
 app.post("/upload", (req, res) => {
   upload(req, res, (err) => {
@@ -80,14 +88,9 @@ app.post("/upload", (req, res) => {
       }
     );
     console.log(image);
-    console.log(req.file);
     const path = "./images/" + req.file.filename;
-    // const finRes = quickstart(path);
-    // console.log("FinRes is: " + finRes);
-    // res.redirect("/");
     quickstart(path).then((data) => res.render("showData", { data }));
   });
-  // res.redirect("/");
 });
 
 app.listen(process.env.PORT || 3000, () =>
@@ -101,3 +104,8 @@ app.listen(process.env.PORT || 3000, () =>
 // Check this as well, where fs is used and it reads multer images
 // Here it seems like the files are being saved in JPG format. Check on how to do that
 // https://www.youtube.com/watch?v=1DtyAOHEHJY&t=453s
+
+// https://www.freecodecamp.org/news/speech-to-sentiment-with-chrome-and-nodejs/
+// If the above link isn't satisfying, try and use this package:
+// https://www.npmjs.com/package/@google-cloud/speech
+// Implementation using google-cloud-speech: https://www.youtube.com/watch?v=naZ8oEKuR44
