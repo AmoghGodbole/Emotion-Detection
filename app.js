@@ -10,14 +10,14 @@ app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 
 const listOfTopics = [
-  "Topic 1",
-  "Topic 2",
-  "Topic 3",
-  "Topic 4",
-  "Topic 5",
-  "Topic 6",
-  "Topic 7",
-  "Topic 8",
+  "What is your favorite childhood memory?",
+  "What did you and your friends do for fun when you were younger?",
+  "What was the best lesson you learned?",
+  "What is one piece of technology you think has changed the world for the better?",
+  "How do you think the world has changed from when you were my age?",
+  "What is something that made you happy this week?",
+  "What is your favorite type of show/movie/music?",
+  "What are you most proud of?",
 ];
 
 async function quickstart(file) {
@@ -51,6 +51,14 @@ const upload = multer({
 }).single("image");
 
 app.get("/", (req, res) => {
+  res.render("landing");
+});
+
+app.get("/about", (req, res) => {
+  res.render("about");
+});
+
+app.get("/list", (req, res) => {
   res.render("index", { listOfTopics });
 });
 
@@ -89,7 +97,7 @@ app.post("/upload", (req, res) => {
     );
     console.log(image);
     const path = "./images/" + req.file.filename;
-    quickstart(path).then((data) => res.render("showData", { data }));
+    quickstart(path).then((data) => res.render("conclusion", { data }));
   });
 });
 

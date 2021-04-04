@@ -1,14 +1,29 @@
     <%- include('partials/header') %>
 
-    <form
-      id="frmUploader"
-      enctype="multipart/form-data"
-      action="/upload"
-      method="post"
-    >
-      <input type="file" name="image" multiple />
+      <div class="container">
 
-      <input type="submit" name="submit" id="btnSubmit" value="Upload" />
-    </form>
+        <h4 class="text-center mt-3">
+          You can write down your thoughts on a <br /> 
+          piece of paper, click an image and upload it here
+        </h4>
+
+        <div class="row">
+          <div class="col-12 d-flex justify-content-center mt-3">
+            <form
+            id="frmUploader"
+            enctype="multipart/form-data"
+            action="/upload"
+            method="post"
+            >
+              <div class="form-group">
+                <label for="image">Upload File</label>
+                <input type="file" name="image" id="image" multiple class="form-control-file mb-3" required/>
+                <input type="submit" name="submit" id="btnSubmit" value="Submit" class="btn btn-outline-dark w-100" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    
 
     <%- include('partials/footer') %>

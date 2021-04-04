@@ -27,17 +27,6 @@ function speechToEmotion() {
       window.location.href = `http://localhost:3000/conclusion/${transcript}`;
       // console.log(window.location.href);
     });
-    // $.ajax(`/listen/${transcript}`, {
-    //   method: "POST",
-    //   success: function (res) {
-    //     if (res.code == 200) {
-    //       console.log("Success");
-    //       window.location.href = "localhost:3000/conclusion";
-    //     } else {
-    //       alert(res.code);
-    //     }
-    //   },
-    // });
     recognition.stop();
   };
 

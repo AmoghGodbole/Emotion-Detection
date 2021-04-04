@@ -1,6 +1,49 @@
 <%- include('partials/header') %>
 
-<h1>Hehe</h1>
-<%= data.score %>
+<% let conclusion; %> 
+
+<% if(data.score <= -15){ %>
+    <% conclusion = "Hello There -5-0" %> 
+<% } %>
+
+<% if(data.score > -15 && data.score < -10){ %>
+    <% conclusion = "Hello There -5-0" %> 
+<% } %>
+
+<% if(data.score > -10 && data.score < -5){ %>
+    <% conclusion = "Hello There -5-0" %> 
+<% } %>
+
+<% if(data.score > -5 && data.score < 0){ %>
+    <% conclusion = "Hello There -5-0" %> 
+<% } %>
+
+<% if(data.score === 0){ %>
+    <% conclusion = "Hello There 0" %> 
+<% } %>
+
+<% if(data.score > 0 && data.score <= 5){ %>
+    <% conclusion = "Hello There 0-5" %> 
+<% } %>
+
+<% if(data.score > 5 && data.score <= 10){ %>
+    <% conclusion = "Hello There 5-10" %> 
+<% } %>
+
+<% if(data.score > 10 && data.score <= 15){ %>
+    <% conclusion = "Hello There 10-15" %> 
+<% } %>
+
+<% if(data.score > 15){ %>
+    <% conclusion = "Hello There 15+" %> 
+<% } %>
+
+<div class="container">
+    <div class="text-center">
+        <h4 class="display-4">
+            <%= conclusion %>
+        </h4>        
+    </div>
+</div>
 
 <%- include('partials/footer') %>

@@ -1,13 +1,18 @@
 <%- include('partials/header') %>
 
-<% listOfTopics.map(l => { %>
-    <div>
-        <h2><%= l %></h2>
-        <a href="/upload">Write And Upload</a>
-        OR
-        <a href="/listen">Talk</a>        
-    </div>
-<% }) %>
+<div class="container">
+    <% listOfTopics.map(l => { %>
 
+        <div class="card my-2 border-0" style="background-color: transparent;">
+            <div class="card-body">
+                <h5 class="card-title"><%= l %> </h5>
+                <p class="card-text">You can either write and upload or talk about this topic</p>
+                <a href="/upload" class="card-link btn btn-outline-dark btn-sm">Write And Upload</a>
+                <a href="/listen" class="card-link btn btn-outline-dark btn-sm">Talk</a>
+            </div>
+        </div>
+    <% }) %>
+
+</div>
 
 <%- include('partials/footer') %>
