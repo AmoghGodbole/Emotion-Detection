@@ -1,0 +1,15 @@
+#about-us-image {
+  background-image: url("../Images/About\ Us.jpg");
+  height: 400px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.about-h1 {
+  font-family: Roboto;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 1.5rem;
+  margin-top: 5%;
+}

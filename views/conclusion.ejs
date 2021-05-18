@@ -40,9 +40,19 @@
 
 <div class="container">
     <div class="text-center">
-        <h4 class="display-4">
+        <h2 class="conclusion-h2">
             <%= conclusion %>
-        </h4>        
+        </h2>        
+        <h4 class="conclusion-h4">
+            The score is <%= data.score %>
+        </h4> 
+        <div class="row d-flex justify-content-center mt-5">
+            <div class="col-4 conclusion-col-4">
+                <a href="/list" class="btn w-100 h-100 d-flex align-items-center justify-content-center">
+                    Go Back To Topics Page
+                </a>
+            </div>
+        </div>       
     </div>
 </div>
 

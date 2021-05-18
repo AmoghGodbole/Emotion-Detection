@@ -59,11 +59,11 @@ app.get("/about", (req, res) => {
 });
 
 app.get("/list", (req, res) => {
-  res.render("index", { listOfTopics });
+  res.render("list", { listOfTopics });
 });
 
 app.get("/upload", (req, res) => {
-  res.render("firstPage");
+  res.render("upload");
 });
 
 app.get("/conclusion/:data", (req, res) => {
@@ -99,6 +99,14 @@ app.post("/upload", (req, res) => {
     const path = "./images/" + req.file.filename;
     quickstart(path).then((data) => res.render("conclusion", { data }));
   });
+});
+
+app.get("/test", (req, res) => {
+  res.render("landing");
+});
+
+app.get("/contact", (req, res) => {
+  res.render("contact");
 });
 
 app.listen(process.env.PORT || 3000, () =>

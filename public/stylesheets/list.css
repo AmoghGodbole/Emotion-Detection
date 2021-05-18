@@ -1,0 +1,25 @@
+.list-card {
+  background-color: #4dfdfd;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 4px 5px 5px black;
+}
+
+.list-h1 {
+  font-family: Roboto;
+  font-weight: 600;
+}
+
+.btn-write-and-speak {
+  background-color: transparent;
+  border: 1px solid black;
+  color: black;
+  border-radius: 50px;
+  width: 15em;
+  font-weight: 700;
+}
+
+.btn-write-and-speak:hover {
+  background-color: black;
+  color: white;
+}

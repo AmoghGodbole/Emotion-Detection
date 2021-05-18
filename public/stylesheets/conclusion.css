@@ -1,0 +1,32 @@
+.conclusion-h2 {
+  font-family: Roboto;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 3rem;
+  margin-top: 5%;
+}
+
+.conclusion-h4 {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-top: 5%;
+}
+
+.conclusion-col-4 {
+  font-family: Roboto;
+  font-style: italic;
+  height: 5rem;
+}
+
+.conclusion-col-4 > a {
+  border-radius: 50px;
+  background-color: #29a5ff;
+  color: black;
+  font-weight: 600;
+  font-size: 1.3rem;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}

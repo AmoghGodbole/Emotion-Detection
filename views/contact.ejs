@@ -1,0 +1,59 @@
+<%- include('partials/header') %>
+
+<div class="container text-center">
+    <h1 class="mt-4 contact-h1">
+        Have a query?
+    </h1>
+    <h1 class="contact-h1">
+        Email Us.
+    </h1>
+    <h1 class="contact-h1">
+        We are always here to help :)
+    </h1>
+
+    <form class="mt-5">
+        <div class="row">
+            <div class="col-lg-3 my-4 d-flex align-items-center justify-content-center">
+                <label class="mr-5" for="name">Name</label>
+            </div>
+            <div class="col-lg-9 d-flex align-items-center justify-content-center">
+                <input 
+                    type="text" 
+                    name="name" 
+                    id="name" 
+                    class="px-2 w-100" 
+                    style="border-radius: 25px; background-color: lightgray; border: none; outline: none; height: 3rem;"
+                />
+            </div> 
+            <div class="col-lg-3 my-4 d-flex align-items-center justify-content-center">
+                <label class="mr-5" for="email">Email</label>
+            </div>
+            <div class="col-lg-9 d-flex align-items-center justify-content-center">
+                <input 
+                    type="email" 
+                    name="email" 
+                    id="email" 
+                    class="px-2 w-100" 
+                    style="border-radius: 25px; background-color: lightgray; border: none; outline: none; height: 3rem;"
+                />
+            </div>
+            <div class="col-lg-3 my-4 d-flex align-items-center justify-content-center">
+                <label class="mr-5" for="email">
+                    Message
+                </label>
+            </div>
+            <div class="col-lg-9 mt-2">
+                <textarea 
+                    rows="3"   
+                    class="px-2 mr-4 form-control"
+                ></textarea>
+            </div>
+            <div class="col-12 my-4">
+                <button class="btn w-100">Send Message</button>
+            </div>
+        </div>
+    </form>
+  
+</div>
+
+<%- include('partials/footer') %>

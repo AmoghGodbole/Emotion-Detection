@@ -1,0 +1,29 @@
+.listen-h1 {
+  font-family: Roboto;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 3rem;
+  margin-top: 5%;
+}
+
+.listen-col-4 {
+  font-family: Roboto;
+  font-style: italic;
+  height: 5rem;
+}
+
+#myBtn {
+  border-radius: 50px;
+  color: black;
+  font-weight: 600;
+  font-size: 1.7rem;
+  background-color: #29a5ff;
+  font-style: italic;
+}
+
+.listen-h3 {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 2rem;
+  font-style: italic;
+}

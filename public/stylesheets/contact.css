@@ -1,0 +1,33 @@
+.contact-h1 {
+  font-family: Roboto;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 3rem;
+}
+
+.col-lg-3 > label {
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.col-12 > button {
+  border-radius: 50px;
+  background-color: #29a5ff;
+  color: black;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.col-12 > button:hover {
+  background-color: rgb(47, 129, 236);
+  color: white;
+}
+
+.col-lg-9 > textarea {
+  display: inline;
+  border-radius: 50px;
+  background-color: lightgray;
+  border: none;
+  outline: none;
+}
