@@ -1,5 +1,3 @@
-require("dotenv").config();
-
 const express = require("express"),
   app = express(),
   multer = require("multer"),
@@ -27,11 +25,7 @@ async function quickstart(file) {
   const vision = require("@google-cloud/vision");
 
   const client = new vision.ImageAnnotatorClient({
-    credentials: {
-      client_email: process.env.CLIENT_EMAIL,
-      private_key: process.env.PRIVATE_KEY_ID,
-    },
-    projectId: process.env.PROJECT_ID,
+    keyFilename: "./apikey.json",
   });
 
   const [result] = await client.textDetection(file);
@@ -118,3 +112,16 @@ app.get("/contact", (req, res) => {
 app.listen(process.env.PORT || 3000, () =>
   console.log("Server listening on port 3000")
 );
+
+// READ THIS AND IMPLEMENT IT
+// https://code.tutsplus.com/tutorials/file-upload-with-multer-in-node--cms-32088#:~:text=When%20a%20web%20client%20uploads,middleware%20for%20Express%20and%20Node.
+// https://www.geeksforgeeks.org/upload-and-retrieve-image-on-mongodb-using-mongoose/
+
+// Check this as well, where fs is used and it reads multer images
+// Here it seems like the files are being saved in JPG format. Check on how to do that
+// https://www.youtube.com/watch?v=1DtyAOHEHJY&t=453s
+
+// https://www.freecodecamp.org/news/speech-to-sentiment-with-chrome-and-nodejs/
+// If the above link isn't satisfying, try and use this package:
+// https://www.npmjs.com/package/@google-cloud/speech
+// Implementation using google-cloud-speech: https://www.youtube.com/watch?v=naZ8oEKuR44
