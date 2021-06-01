@@ -39,39 +39,48 @@
 <% let conclusion; %> 
 
 <% if(data.score <= -15){ %>
-    <% conclusion = "Hello There -5-0" %> 
+    <% conclusion = "The person who has written this is very pessimistic about this topic. He/She probably should " %> 
+    <% conclusion += "talk to a professional and resolve his/her issues in relation to this topic. " %> 
 <% } %>
 
 <% if(data.score > -15 && data.score < -10){ %>
-    <% conclusion = "Hello There -5-0" %> 
+    <% conclusion = "The person who has written this seems mildly troubled about this topic. His/Her overall emotions are" %> 
+    <% conclusion += " negative and it would be a good idea for him/her to talk to just talk about this." %> 
 <% } %>
 
 <% if(data.score > -10 && data.score < -5){ %>
-    <% conclusion = "Hello There -5-0" %> 
+    <% conclusion = "We can see from the score that the person writing/speaking about this has some unresolved issues when it comes to this topic. " %> 
+    <% conclusion += "The best thing for him/her to do would be to talk about this with someone and work it out spiritually." %> 
 <% } %>
 
 <% if(data.score > -5 && data.score < 0){ %>
-    <% conclusion = "Hello There -5-0" %> 
+    <% conclusion = "The person writing/speaking about this topic seems to have an overall negative vibe when it comes to this topic. It doesn't seem as " %> 
+    <% conclusion += "severe and these issues can probably be resolved by talking about them and helping him/her gain a more positive perspective about this topic." %> 
 <% } %>
 
 <% if(data.score === 0){ %>
-    <% conclusion = "Hello There 0" %> 
+    <% conclusion = "The person seems to have no particular positive or negative emotions when it comes to this topic." %> 
 <% } %>
 
 <% if(data.score > 0 && data.score <= 5){ %>
-    <% conclusion = "Hello There 0-5" %> 
+    <% conclusion = "The person has overall positive emotions associated with this topic, but it could be possible that there are some " %> 
+    <% conclusion += "unresolved issues in the background. It would be best to bring this topic up in conversation and handle " %> 
+    <% conclusion += "the situation accordingly. " %> 
 <% } %>
 
 <% if(data.score > 5 && data.score <= 10){ %>
-    <% conclusion = "Hello There 5-10" %> 
+    <% conclusion = "The person writing/speaking about this has positive emotions associated with this topic and seems content with the time" %> 
+    <% conclusion += "he/she has spent living those moments. This topic can be used as a mood shifter if that person ever seems upset." %> 
 <% } %>
 
 <% if(data.score > 10 && data.score <= 15){ %>
-    <% conclusion = "Hello There 10-15" %> 
+    <% conclusion = "This topic is a definite mood lifter and should be brought up to remind the person writing/speaking about this, of the \"good old " %> 
+    <% conclusion += "days\".  " %> 
 <% } %>
 
 <% if(data.score > 15){ %>
-    <% conclusion = "Hello There 15+" %> 
+    <% conclusion = "The person who has written this is very optimistic about this topic. He/She doesn't seem" %> 
+    <% conclusion += " to have any negative thoughts in relation to this topic. This topic can be used a mood lifter because of the overall positivity associated with it." %> 
 <% } %>
 
 <div class="container">
